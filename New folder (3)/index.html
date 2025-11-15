@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Heart in Stars for You</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body>
+        <!-- Loading Screen -->
+    <div id="intro-screen">
+        <div class="hearts-container">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+        <h1>Loading a special message...</h1>
+        <p class="subtitle">Just for you <span class="heart-beat">❤</span></p>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="hidden">
+        <div class="landing-content">
+            <h1>Hello, <span id="user-name">Beautiful</span> <span class="heart-pulse">❤</span></h1>
+            <p class="subtitle">I have something special to share with you</p>
+            <div class="name-input">
+                <input type="text" id="name-input" placeholder="Enter your name" maxlength="20">
+                <button id="start-journey">
+                    <span>Begin Our Journey</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confession Section -->
+    <div id="our-story" class="hidden">
+        <div class="confession-wrapper">
+            <div class="confession-scroll-container">
+                <div class="confession-letter">
+                    <div class="letter-header">
+                        <div class="letter-envelope">💌</div>
+                        <h1 class="letter-title">A Confession to <span id="confession-name">You</span></h1>
+                        <div class="letter-divider"></div>
+                    </div>
+                    
+                    <div class="confession-cards-grid">
+                        <!-- Individual flip cards will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="letter-footer">
+                        <p class="instruction-text">Click each card to reveal my heart</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="next-section-btn" class="hidden confession-next-btn">
+                Continue to Wishes <i class="fas fa-arrow-circle-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Make a Wish Section -->
+    <div id="wish-section" class="hidden">
+        <div class="wish-wrapper">
+            <div class="wish-scroll-container">
+                <div class="wish-letter">
+                    <div class="wish-header">
+                        <div class="wish-envelope">✨</div>
+                        <h1 class="wish-title">Make a Wish, <span id="wish-name">You</span> ✨</h1>
+                        <div class="wish-divider"></div>
+                    </div>
+                    
+                    <div class="wish-card">
+                        <div class="wish-card-content">
+                            <div class="wish-card-emoji">⭐</div>
+                            <h2 class="wish-card-title">Make a Wish</h2>
+                            <div class="wish-message-container">
+                                <p id="wish-message">Click the star to reveal a wish</p>
+                            </div>
+                            <div class="wish-star-container">
+                                <div class="wish-star">
+                                    <div class="star-core"></div>
+                                    <div class="star-glow"></div>
+                                    <div class="sparkles"></div>
+                                </div>
+                            </div>
+                            <div class="wish-card-hint">
+                                <i class="fas fa-hand-pointer"></i>
+                                <span>Click the star for the next wish</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wish-footer">
+                        <p class="wish-instruction-text">Click the star to reveal our wishes</p>
+                        <div class="collected-stars">
+                            <!-- Collected stars will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="wish-continue-btn" class="confession-next-btn hidden">
+                Continue to Love Letter <i class="fas fa-arrow-circle-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Love Letter Section -->
+    <div id="love-letter" class="hidden full-page-section">
+        <div class="love-letter-wrapper">
+            <div class="letter-container">
+                <div class="letter-paper">
+                    <div class="wax-seal">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="letter-content">
+                        <h2>My Dearest <span id="letter-name">You</span>,</h2>
+                        <div class="letter-text">
+                            <!-- Letter content will be typed here -->
+                        </div>
+                        <div class="signature">
+                            <p>With all my love,</p>
+                            <p class="signature-name">Me</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="next-section-btn" class="hidden confession-next-btn">
+                Continue to Final Question <i class="fas fa-arrow-circle-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Final Question -->
+    <div id="final-question" class="hidden full-page-section">
+        <div class="question-wrapper">
+            <div class="question-container">
+                <div class="hearts-falling">
+                    <!-- Hearts will be added here by JavaScript -->
+                </div>
+                <h1>Will you be mine?</h1>
+                <p>Let's create more beautiful moments together</p>
+                
+                <div class="answer-buttons">
+                    <button id="yes-btn" class="pulse">
+                        <i class="fas fa-heart"></i> Yes!
+                    </button>
+                    <button id="no-btn">
+                        <i class="far fa-heart"></i> No
+                    </button>
+                </div>
+                
+                <div id="response-message" class="hidden">
+                    <h2>I knew you'd say yes! <i class="fas fa-heart red"></i></h2>
+                    <p>You've made me the happiest person alive!</p>
+                    <button id="restart-btn">Relive our journey <i class="fas fa-redo"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sparkle-sound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+    <audio id="click-sound" src="https://assets.mixkit.co/active_storage/sfx/2661/2661-preview.mp3"></audio>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1437 @@
+        /* --- Global & Container Styles --- */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #ff4d6d;
+            --secondary-color: #ff8fa3;
+            --accent-color: #ffccd5;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: var(--light-color);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* ===== Wish Section ===== */
+        #wish-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+
+        .wish-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .wish-scroll-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        /* Custom scrollbar */
+        .wish-scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .wish-scroll-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .wish-scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 77, 109, 0.3);
+            border-radius: 10px;
+        }
+
+        .wish-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 77, 109, 0.5);
+        }
+
+        .wish-letter {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 77, 109, 0.15);
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            min-height: calc(100vh - 4rem);
+        }
+
+        /* Letter Header */
+        .wish-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(255, 77, 109, 0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .wish-envelope {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 77, 109, 0.4));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .wish-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .wish-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 2rem auto 0;
+            box-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+        }
+
+        /* Wish Card Styling */
+        .wish-card {
+            min-height: 500px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .wish-card-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            text-align: center;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 77, 109, 0.15), rgba(255, 143, 163, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .wish-card:hover .wish-card-content {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(255, 77, 109, 0.4);
+            border-color: rgba(255, 77, 109, 0.4);
+        }
+
+        .wish-message-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 150px;
+        }
+
+        #wish-message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Front Card Content */
+        .wish-card-emoji {
+            font-size: clamp(3rem, 8vw, 4rem);
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 77, 109, 0.6));
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+        }
+
+        .wish-card-title {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 77, 109, 0.5);
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        .wish-card-hint {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            margin-top: auto;
+            animation: pulseHint 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseHint {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .wish-card-hint i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Star Styles */
+        .wish-star-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 1.5rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .wish-star {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .star-core {
+            width: 100%;
+            height: 100%;
+            background: #facc15;
+            clip-path: polygon(
+                50% 0%,
+                61% 35%, 
+                98% 35%,
+                68% 57%,
+                79% 91%, 
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%
+            );
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 25px rgba(250, 204, 33, 0.7));
+        }
+
+        .star-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #facc15;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.5;
+            animation: pulse 2s infinite;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+
+        /* Back Card Content */
+        .wish-back-emoji {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.4));
+        }
+
+        .wish-back-content {
+            text-align: left;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .wish-back-title {
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            color: white;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .wish-back-content p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .wish-back-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Letter Footer */
+        .wish-footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 77, 109, 0.2);
+        }
+
+        .wish-instruction-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Collected stars */
+        .collected-stars {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 1.5rem 0 0;
+            min-height: 40px;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .collected-stars i {
+            color: #facc15;
+            font-size: 1.8rem;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease-out;
+            text-shadow: 0 0 15px rgba(250, 204, 33, 0.7);
+        }
+
+        .collected-stars i.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Continue button */
+        #wish-continue-btn {
+            background: linear-gradient(45deg, var(--primary-color), #ff8fa3);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 2rem auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 25px rgba(255, 77, 109, 0.4);
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        #wish-continue-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #wish-continue-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(255, 77, 109, 0.6);
+        }
+
+        #wish-continue-btn:active {
+            transform: translateY(1px);
+        }
+
+        #wish-continue-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        #wish-continue-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== Loading Screen ===== */
+        #intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease-out, visibility 1s ease-out;
+        }
+
+        #intro-screen h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--light-color);
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        #intro-screen .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-top: 1rem;
+        }
+
+        .heart-beat {
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* ===== Landing Page ===== */
+        #landing-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .landing-content {
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .landing-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .landing-content .subtitle {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .name-input {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .name-input input {
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .name-input input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+        }
+
+        .name-input input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #start-journey {
+            background: linear-gradient(45deg, var(--primary-color), #ff8fa3);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem auto 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #start-journey:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+        }
+
+        #start-journey:active {
+            transform: translateY(1px);
+        }
+
+        #start-journey i {
+            transition: transform 0.3s ease;
+        }
+
+        #start-journey:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== Floating Hearts Background ===== */
+        .hearts-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 77, 109, 0.6);
+            transform: rotate(45deg);
+            animation: float 15s linear infinite;
+            opacity: 0;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: inherit;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -10px;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .heart:nth-child(2) {
+            left: 20%;
+            animation-delay: 2s;
+            animation-duration: 22s;
+        }
+
+        .heart:nth-child(3) {
+            left: 30%;
+            animation-delay: 4s;
+            animation-duration: 20s;
+        }
+
+        /* ===== Section Transitions ===== */
+        .section {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            font-weight: 700;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* ===== Navigation Buttons ===== */
+        .nav-button {
+            background: linear-gradient(45deg, var(--primary-color), #ff8fa3);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+        }
+
+        .nav-button:active {
+            transform: translateY(1px);
+        }
+
+        .nav-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== Hidden Class ===== */
+        .hidden {
+            display: none !important;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* ===== Fade In Animation ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* ===== Confession Section ===== */
+        #our-story {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+
+        .confession-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .confession-scroll-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        /* Custom scrollbar */
+        .confession-scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .confession-scroll-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .confession-scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 77, 109, 0.3);
+            border-radius: 10px;
+        }
+
+        .confession-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 77, 109, 0.5);
+        }
+
+        .confession-letter {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 77, 109, 0.15);
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            min-height: calc(100vh - 4rem);
+        }
+
+        /* Letter Header */
+        .letter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(255, 77, 109, 0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .letter-envelope {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 77, 109, 0.4));
+        }
+
+        .letter-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+            letter-spacing: 1px;
+        }
+
+        #confession-name {
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(255, 204, 213, 0.8);
+            display: inline-block;
+            animation: gentleGlow 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes gentleGlow {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(255, 204, 213, 0.8);
+            }
+            50% { 
+                text-shadow: 0 0 30px rgba(255, 204, 213, 1), 0 0 40px rgba(255, 77, 109, 0.6);
+            }
+        }
+
+        .letter-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 2rem auto 0;
+            box-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+        }
+
+        /* Confession Cards Grid */
+        .confession-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding: 1rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        /* Individual Confession Flip Card Styling */
+        .confession-flip-card {
+            perspective: 1200px;
+            min-height: 350px;
+            height: auto;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: transform;
+            width: 100%;
+        }
+
+        .confession-flip-card:not(.flipped):hover .flip-card-inner {
+            transform: translateY(-5px) scale(1.02);
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .confession-flip-card:not(.flipped):hover .flip-card-front {
+            box-shadow: 0 20px 60px rgba(255, 77, 109, 0.5);
+            border-color: rgba(255, 77, 109, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            text-align: center;
+            transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+            transform-origin: center center;
+            will-change: transform;
+        }
+
+        .confession-flip-card.flipped .flip-card-inner {
+            height: auto;
+            min-height: 100%;
+            transform: rotateY(180deg);
+            transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            min-height: 350px;
+            transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+            will-change: transform, box-shadow, border-color;
+            box-sizing: border-box;
+        }
+
+        .flip-card-front {
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 77, 109, 0.15), rgba(255, 143, 163, 0.1));
+            backdrop-filter: blur(10px);
+        }
+
+        .flip-card-back {
+            height: auto;
+            min-height: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 77, 109, 0.2), rgba(255, 143, 163, 0.15));
+            backdrop-filter: blur(15px);
+            transform: rotateY(180deg);
+            overflow: visible;
+            position: relative;
+            padding: 2.5rem;
+        }
+
+        .confession-flip-card.flipped .flip-card-back {
+            box-shadow: 0 15px 50px rgba(255, 77, 109, 0.4);
+            border-color: rgba(255, 77, 109, 0.4);
+        }
+
+        /* Front Card Content */
+        .card-emoji {
+            font-size: clamp(3rem, 8vw, 4rem);
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 77, 109, 0.6));
+            animation: floatEmoji 3s ease-in-out infinite;
+        }
+
+        .card-title {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 77, 109, 0.5);
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        #confession-name-front {
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(255, 204, 213, 0.8);
+        }
+
+        .card-hint {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            margin-top: auto;
+            animation: pulseHint 2s ease-in-out infinite;
+        }
+
+        .card-hint i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Back Card Content */
+        .back-emoji {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.4));
+        }
+
+        .back-content {
+            text-align: left;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .section-title,
+        .back-title {
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            color: white;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .section-content {
+            text-align: left;
+            width: 100%;
+        }
+
+        .back-content p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .back-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Letter Footer */
+        .letter-footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 77, 109, 0.2);
+        }
+
+        .instruction-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Next Section Button */
+        .confession-next-btn {
+            background: linear-gradient(45deg, var(--primary-color), #ff8fa3);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 2rem auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 25px rgba(255, 77, 109, 0.4);
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .confession-next-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(255, 77, 109, 0.6);
+        }
+
+        .confession-next-btn:active {
+            transform: translateY(1px);
+        }
+
+        .confession-next-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .confession-next-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== Full Page Sections ===== */
+        .full-page-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+
+        /* Love Letter Section */
+        .love-letter-wrapper {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .letter-container {
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Final Question Section */
+        .question-wrapper {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .question-container {
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .question-container h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+        }
+
+        .question-container p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--accent-color);
+            margin-bottom: 3rem;
+        }
+
+        /* Sparkles effect */
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            color: #fde047;
+            animation: sparkle-float 1.5s linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes sparkle-float {
+            0% {
+                opacity: 1;
+                transform: scale(1) translate(0, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2) translate(var(--x), -200px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .confession-letter {
+                width: 95%;
+                padding: 2rem 1.5rem;
+            }
+            
+            .confession-cards-grid {
+                gap: 1.25rem;
+                padding: 0.5rem 0;
+                margin-bottom: 2rem;
+            }
+            
+            .confession-flip-card {
+                min-height: 320px;
+            }
+            
+            .flip-card-front,
+            .flip-card-back {
+                padding: 1.75rem;
+                min-height: 320px;
+                border-radius: 18px;
+            }
+            
+            .card-emoji {
+                font-size: 3.5rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .card-title {
+                margin-bottom: 1.25rem;
+            }
+            
+            .back-emoji {
+                font-size: 2.2rem;
+            }
+            
+            .letter-envelope {
+                font-size: 3rem;
+            }
+            
+            /* Wish section responsive */
+            .wish-letter {
+                width: 95%;
+                padding: 2rem 1.5rem;
+            }
+            
+            .wish-card {
+                min-height: 380px;
+            }
+            
+            .wish-card-front,
+            .wish-card-back {
+                padding: 1.75rem;
+                min-height: 380px;
+                border-radius: 18px;
+            }
+            
+            .wish-card-emoji {
+                font-size: 3.5rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .wish-card-title {
+                margin-bottom: 1.25rem;
+            }
+            
+            .wish-back-emoji {
+                font-size: 2.2rem;
+            }
+            
+            .wish-envelope {
+                font-size: 3rem;
+            }
+            
+            .wish-star-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .confession-wrapper {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .confession-scroll-container {
+                padding: 0.5rem 0;
+            }
+            
+            .confession-letter {
+                padding: 1.5rem 1rem;
+                width: 100%;
+                border-left: none;
+                border-right: none;
+                min-height: auto;
+            }
+            
+            .confession-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 100%;
+                padding: 0.5rem 0;
+                margin-bottom: 2rem;
+            }
+            
+            .confession-flip-card {
+                min-height: 300px;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .flip-card-front,
+            .flip-card-back {
+                padding: 1.5rem;
+                min-height: 300px;
+                border-radius: 16px;
+            }
+            
+            .card-emoji {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .card-hint {
+                font-size: 0.85rem;
+                gap: 0.4rem;
+            }
+            
+            .card-hint i {
+                font-size: 1.2rem;
+            }
+            
+            .back-emoji {
+                font-size: 2rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .back-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .letter-envelope {
+                font-size: 2.5rem;
+            }
+            
+            .back-content p {
+                text-align: left;
+                font-size: clamp(0.9rem, 3.5vw, 1rem);
+                line-height: 1.7;
+                margin-bottom: 1rem;
+            }
+            
+            .letter-header {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            
+            .letter-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+            
+            .instruction-text {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+            
+            .confession-next-btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                margin: 1.5rem auto;
+            }
+            
+            /* Wish section responsive */
+            .wish-wrapper {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .wish-scroll-container {
+                padding: 0.5rem 0;
+            }
+            
+            .wish-letter {
+                padding: 1.5rem 1rem;
+                width: 100%;
+                border-left: none;
+                border-right: none;
+                min-height: auto;
+            }
+            
+            .wish-card {
+                min-height: 350px;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .wish-card-front,
+            .wish-card-back {
+                padding: 1.5rem;
+                min-height: 350px;
+                border-radius: 16px;
+            }
+            
+            .wish-card-emoji {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .wish-card-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .wish-card-hint {
+                font-size: 0.85rem;
+                gap: 0.4rem;
+            }
+            
+            .wish-card-hint i {
+                font-size: 1.2rem;
+            }
+            
+            .wish-back-emoji {
+                font-size: 2rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .wish-back-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .wish-envelope {
+                font-size: 2.5rem;
+            }
+            
+            .wish-back-content p {
+                text-align: left;
+                font-size: clamp(0.9rem, 3.5vw, 1rem);
+                line-height: 1.7;
+                margin-bottom: 1rem;
+            }
+            
+            .wish-header {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            
+            .wish-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+            
+            .wish-instruction-text {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+            
+            #wish-continue-btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                margin: 1.5rem auto;
+            }
+            
+            .wish-star-container {
+                width: 130px;
+                height: 130px;
+            }
+        }
